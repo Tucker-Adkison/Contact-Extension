@@ -1,0 +1,39 @@
+{
+   "manifest_version": 2,
+   "name": "Contact Extension",
+   "version": "0.6",
+
+   "description": "Extension that lets a person grab information from a website and store the information as a contact",
+   "icons": {
+      "16": "images/Frog16.png",
+      "48": "images/Frog48.png",
+      "128": "images/Frog128.png"
+   },
+
+   "permissions": [
+      "contextMenus",
+      "storage",
+      "tabs",
+      "identity" 
+   ],
+
+   "background": {
+      "persistent": false,
+      "scripts": ["src/background.js"]
+   },
+
+   "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["src/contentScript.js"]
+   }],
+
+   "browser_action": {
+      "default_popup": "src/popup.html",
+      "default_icon": {                
+         "16": "images/Frog16.png",           
+         "24": "images/Frog24.png",           
+         "32": "images/Frog32.png"            
+       }
+   }
+   
+}
